@@ -1,4 +1,4 @@
-// wrong ans on test case 1
+// wrong ans on test case  1
 #include <stdio.h>
 void sort(int n, int arr[])
 {

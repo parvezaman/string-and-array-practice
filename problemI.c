@@ -1,28 +1,34 @@
+// not solved yet
 #include <stdio.h>
 #include <string.h>
 int main()
 {
     int n;
-    scanf("%d", &n);
-    scanf("\n");
+    scanf("%d ", &n);
 
     for (int i = 0; i < n; i++)
     {
         char intake[100];
         gets(intake);
         int length = strlen(intake);
-        if (length % 2 != 0)
-        {
-            printf("NO");
-        }
 
-        if (strcmp(intake[i], intake[(length / 2) + i]) == 0)
+        int temp = (length + 1) / 2;
+        int counter = 0;
+        for (int i = 0; i < temp; i++)
         {
-            printf("YES");
+
+            if (intake[i] == intake[temp + i])
+            {
+                counter++;
+            }
+        }
+        if (counter == temp)
+        {
+            printf("YES\n");
         }
         else
         {
-            printf("NO");
+            printf("NO\n");
         }
     }
 
