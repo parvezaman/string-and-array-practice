@@ -3,8 +3,8 @@
 
 int main()
 {
-    char givenText[100], modifiedText[100];
-    int position = 0, countArr[128] = {0}, count = 0;
+    char givenText[1001], modifiedText[1001];
+    int position = 0, countArr[26] = {0}, count = 0;
     gets(givenText);
 
     int length = strlen(givenText);
@@ -20,15 +20,19 @@ int main()
     modifiedText[position] = '\0';
     for (int i = 0; i < position; i++)
     {
-        countArr[modifiedText[i]] = 1;
+        countArr[modifiedText[i] - 'a'] = 1;
     }
 
-    for (int i = 0; i < 128; i++)
+    /* for (int i = 0; i < 26; i++)
+    {
+        printf("%d ", countArr[i]);
+    } */
+    for (int i = 0; i < 26; i++)
     {
         count += countArr[i];
     }
 
-    printf("count = %d", count);
+    printf("%d", count);
 
     return 0;
 }
