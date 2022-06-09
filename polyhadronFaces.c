@@ -2,30 +2,33 @@
 #include <string.h>
 int main()
 {
-    // int n, Tetrahedron = 4, Cube = 6, Octahedron = 8, Dodecahedron = 12, Icosahedron = 20;
     int n;
-    scanf("%d\n", &n);
+    char empty;
+    scanf("%d", &n);
+    scanf("%c", &empty);
     int totalFaces = 0;
     for (int i = 0; i < n; i++)
     {
         char givenText[100];
         gets(givenText);
-        int length = strlen(givenText);
-        givenText[length] = '\0';
-        // printf("%s", givenText);
-        if (givenText == "Tetrahedron")
+
+        if (strcmp(givenText, "Tetrahedron") == 0)
         {
             totalFaces += 4;
         }
-        else if (givenText == "Octahedron")
+        else if (strcmp(givenText, "Cube") == 0)
+        {
+            totalFaces += 6;
+        }
+        else if (strcmp(givenText, "Octahedron") == 0)
         {
             totalFaces += 8;
         }
-        else if (givenText == "Dodecahedron")
+        else if (strcmp(givenText, "Dodecahedron") == 0)
         {
             totalFaces += 12;
         }
-        else if (givenText == "Icosahedron")
+        else if (strcmp(givenText, "Icosahedron") == 0)
         {
             totalFaces += 20;
         }
