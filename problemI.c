@@ -4,6 +4,7 @@ int main()
 {
     int n;
     scanf("%d", &n);
+    scanf("\n");
 
     for (int i = 0; i < n; i++)
     {
@@ -15,7 +16,7 @@ int main()
             printf("NO");
         }
 
-        if (strcmp(intake[i], intake[length - i]) == 0)
+        if (strcmp(intake[i], intake[(length / 2) + i]) == 0)
         {
             printf("YES");
         }

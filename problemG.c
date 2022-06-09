@@ -1,3 +1,4 @@
+// wrong ans on test case 1
 #include <stdio.h>
 void sort(int n, int arr[])
 {
@@ -6,7 +7,7 @@ void sort(int n, int arr[])
     {
         for (int i = 0; i < n - step - 1; i++)
         {
-            if (arr[i] > arr[i + 1])
+            if (arr[i] < arr[i + 1])
             {
                 int temp = arr[i];
                 arr[i] = arr[i + 1];
@@ -27,13 +28,25 @@ int main()
         scanf("%d", &points[i]);
     }
 
-    int sortedArr[n];
     sort(n, points);
 
     for (int i = 0; i < n; i++)
     {
-        printf("%d ", sortedArr[i]);
+        printf("%d ", points[i]);
     }
+    printf("\n");
+
+    int serejaPoint = 0, dimaPoint = 0;
+    int odd = 1, even = 0;
+    while (odd < n || even < n)
+    {
+        serejaPoint += points[even];
+        dimaPoint += points[odd];
+        odd += 2;
+        even += 2;
+    }
+
+    printf("%d %d", serejaPoint, dimaPoint);
 
     return 0;
 }
