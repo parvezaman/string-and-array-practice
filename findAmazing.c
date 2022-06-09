@@ -8,29 +8,21 @@ int main()
     {
         scanf("%d", &arr[i]);
     }
-    int max = arr[0], min = arr[0], amazing = 0;
+    int amazingCount = 0, min = arr[0], max = arr[0];
     for (int i = 0; i < n; i++)
     {
         if (arr[i] > max)
         {
             max = arr[i];
+            amazingCount++;
         }
         if (arr[i] < min)
         {
             min = arr[i];
+            amazingCount++;
         }
     }
-    printf("max = %d\n", max);
-    printf("min = %d\n", min);
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] == max || arr[i] == min)
-        {
-            amazing++;
-        }
-    }
-
-    printf("%d", amazing);
+    printf("%d", amazingCount);
 
     return 0;
 }
